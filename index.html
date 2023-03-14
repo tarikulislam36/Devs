@@ -1,191 +1,659 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <title>E-event.com</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <style>    
-    /* Set black background color, white text and some padding */
-    footer {
-      background-color: #555;
-      color: white;
-      padding: 15px;
-    }
-    .panel-body{
-      overflow: hidden;
-    }
-    .van{
-      max-width: 100%;
-    }
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>  DevOnes</title>
 
 
-  </style>
-</head>
-<body>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">E-event.com</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Messages</a></li>
-      </ul>
-      <form class="navbar-form navbar-right" role="search">
-        <div class="form-group input-group">
-          <input type="text" class="form-control" placeholder="Search..">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="button">
-              <span class="glyphicon glyphicon-search"></span>
-            </button>
-          </span>        
-        </div>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<style type="text/css">
+	
+/* Navbar styles */
+
+
+body {
+ background-image: url("image/sphere-colors-unscreen.gif");
+ background-color: white;
+
+   background-repeat: no-repeat;
+
+   background-position-x: right;
+
+   background-position-y: 50px;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:#007bff;
+  padding: 10px;
+}
+
+.navbar-left,
+.navbar-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-left {
+  justify-content: flex-start;
+
+}
+
+.navbar-right {
+  justify-content: flex-end;
+  font-size: 1.5em; 
+}
+
+.myproject{
+	position: relative;
+
+	left: 19%;
+
+	color: white;
+
+	font-weight: bold;
+}
+.navbar-menu {
+  display: none;
+}
+
+.navbar-middle {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  background-color:#adadac;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
+.search-form input[type="text"] {
+  border: none;
+  outline: none;
+  width: 19rem;
+  height: 2rem;
+  border-radius: 20px;
+  margin-right: 10px;
+  border-bottom-left-radius: 20px;
+   border-top-left-radius: 20px;
+   border-bottom-right-radius: 50px;
+}
+
+.search-form button[type="submit"] {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: white;
+}
+
+/* Responsive styles */
+
+@media screen and (max-width: 873px) {
+
+
+.myproject{
+	position: relative;
+
+	left: 15%;
+
+	
+}
+
+body {
+ background-image: url("image/earth.gif");
+ background-color: white;
+
+   background-repeat: no-repeat;
+
+   background-position-x: right;
+
+   background-position-y: 50px;
+}
+	
+	}
+
+@media screen and (max-width: 768px) {
+  .navbar-left,
+  .navbar-middle,
+  .navbar-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
   
-<div class="container text-center">    
-  <div class="row">
-    <div class="col-sm-3 well">
-      <div class="well">
-        <p><a href="#">My Profile</a></p>
-        <img src="IMG_20221106_224410_037.jpg" class="img-circle" height="65" width="65" alt="Avatar">
-      </div>
-      <div class="well">
-        <p><a href="#">Interests</a></p>
-        <p>
-          <span class="label label-default">Software engineering</span>
-          <span class="label label-primary">Web Development</span>
-          <span class="label label-success">Robotics</span>
-          <span class="label label-info">Artificial Intelligence</span>
-          <span class="label label-warning">Automation</span>
-          <span class="label label-danger">App Development</span>
-        </p>
-      </div>
-      <div class="alert alert-success fade in">
-        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-        <p><strong>Hey!</strong></p>
-        People are looking at your profile. Find out who.
-      </div>
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
-    </div>
-    <div class="col-sm-7">
-    
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="panel panel-default text-left">
-            <div class="panel-body">
-<img class="van" src="https://cdn.filestackcontent.com/compress/output=format:webp/cache=expiry:max/resize=width:936/fGSxnHUIRHRvkY1kQzff" alt="First slide">
-              <button type="button" class="btn btn-default btn-sm">
-                <span class="glyphicon glyphicon-thumbs-up"></span> Like
-              </button>     
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="well" style="background-color:#4487f2;color:#d5d8de;">
-           <p>NOV 30, 2022 - INFO SESSION </p>
-           <img src="https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-dsc/event_banners/gdev-eccosystems-bevy-chapters-thumbnail_CWNBE37.png" class="img-circle" height="55" width="55" alt="Avatar">
-          </div>
-        </div>
-        <div class="col-sm-9">
-          <div class="well">
-                      <b> <pre> Introduction to Google Developer Student Clubs </pre></b>
-            <p>As the new session begins at the college, we introduce them to the club's team, its workings and events, how to collaborate and be a part of the journey, and how to add skills to their arsenal. We are excited to introduce new folks to our community and how it functions.....
-</p>
-<button class="btn btn-primary " style="float: right;">Learn more...</button>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="well" style="background-color:#4487f2;color:#d5d8de;">           <p>DEC 20, 2022 </p>
-           <img src="https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-dsc/events/WhatsApp%2520Image%25202022-11-08%2520at%25202.05.55%2520PM.jpeg" class="img-circle" height="55" width="55" alt="Avatar">
-          </div>
-        </div>
-        <div class="col-sm-9">
-          <div class="well">
-             <h2> <b> <pre> Data Science Speaker Session</pre></b> </h2>
-            <p>Our speaker, Mr. Binay Gupta (https://www.linkedin.com/in/binay-gupta-iitb/) will make us aware about the opportunities and skills required in Data Science.</p>
-            <button class="btn btn-primary " style="float: right;">Learn more...</button>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-3">
-           <div class="well" style="background-color:#4487f2;color:#d5d8de;">
-           <p>NOV 30, 2022</p>
-           <img src="https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-dsc/events/banner_q6ggi5S.png" class="img-circle" height="55" width="55" alt="Avatar">
-          </div>
-        </div>
-        <div class="col-sm-9">
-          <div class="well">
-              <b> <pre> Freshers Orientation + Introduction to Git & GitHu </pre></b>
-              <p>Career Development
-             
-The event is open to all first year students only.
+  .navbar-middle {
+    justify-content: flex-start;
+  }
+  
+  .search-form {
+    display: none;
+  }
+  .myproject{
+	display: none;
+}
+  .navbar-right {
+  	display: none;
+    justify-content: flex-end;
+  }
+  
+  .navbar-menu {
+    display: block;
+    margin-right: 10px;
+  }
+}
 
-</p>
- <button class="btn btn-primary " style="float: right;">Learn more...</button>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="well" style="background-color:#4487f2;color:#d5d8de;">
-           <p>NOV 30, 2022 </p>
-           <img src="https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-dsc/events/Copy%2520of%2520Spaghetti%2520Bridge%2520%2528Square%2529.png" class="img-circle" height="55" width="55" alt="Avatar">
-          </div>
-        </div>
-        <div class="col-sm-9">
-          <div class="well">
-                             <pre> <b> CODE HUNT  </b> </pre>  
-            <p>Use your favorite Instagram to decode codes to get the next code's clue.</p>
-            <button class="btn btn-primary " style="float: right;">Learn more...</button>
-          </div>
-        </div>
-      </div>     
-    </div>
-    <div class="col-sm-2 well">
-      <div class="thumbnail">
-        <p>Emo Guide:</p>
-        <img src="https://cliply.co/wp-content/uploads/2019/05/371905140_MEET_ROBOT_400px.gif" alt="Paris" width="400" height="300">
-        <p><strong>Hi!</strong></p>
-        <p></p>
-        <button class="btn btn-primary">Chat</button>
-      </div>      
-      <div class="well">
-        <p>ADS</p>
-      </div>
-      <div class="well">
-        <p>ADS</p>
-      </div>
-    </div>
+.logo{
+	height: 40px;
+}
+
+
+.serv{
+
+	height: 60px;
+
+	background-color: red;
+}
+
+   .box {
+        height: 80px;
+        width: 100%;
+       border: solid 1px #007bff;
+        border-radius: 5px;
+        display: flex;
+       
+        align-items: center;
+      }
+
+      .box img {
+        width: 55px;
+        height: 55px;
+        border-radius: 0%;
+        margin-right: 5px;
+        margin-left: 5px;
+      }
+
+      .box span {
+        font-size: 20px;
+
+        color:#007bff;
+
+        font-weight: bold;
+      }
+       .box:hover {
+         background-color: #f2f2f2;
+      }
+ .box a {
+        text-decoration: none;
+      }
+
+      .fa-user {
+  color: white;
+}
+
+.fa-bars {
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+.ui-showcase {
+  background-color: #f5f5f5;
+  padding: 50px 0;
+}
+
+.ui-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ui-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+  margin-top: 50px;
+}
+
+.ui-item {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.ui-item img {
+  max-width: 100%;
+}
+
+.ui-item h3 {
+  margin: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .ui-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  
+  .ui-item {
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .ui-item {
+    margin-right: 0;
+  }
+  
+  .ui-item h3 {
+    font-size: 18px;
+  }
+}
+
+
+
+
+.contact-us {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+.contact-us a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+  background-color: #222;
+  color: #fff;
+  padding: 60px 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex-basis: 30%;
+  margin-bottom: 30px;
+}
+
+.footer-section.about {
+  flex-basis: 40%;
+}
+
+.footer-section h2 {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.footer-section.about .logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-section p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.footer-section .contact {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.footer-section .contact span {
+  display: block;
+}
+
+.footer-section .contact span i {
+  margin-right: 10px;
+}
+
+.footer-section .socials a {
+  display: inline-block;
+  margin-right: 10px;
+  color: #fff;
+  font-size: 24px;
+}
+
+.footer-section .socials a:hover {
+  color: #aaa;
+}
+
+.footer-section.links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-section.links li {
+  margin-bottom: 10px;
+}
+
+.footer-section.links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-section.contact-form input,
+.footer-section.contact-form textarea {
+width: 100%;
+padding: 10px;
+margin-bottom: 20px;
+border: none;
+border-radius: 4px;
+}
+
+.footer-section.contact-form .btn-primary {
+background-color: #337ab7;
+color: #fff;
+border: none;
+padding: 10px 20px;
+border-radius: 4px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.footer-section.contact-form .btn-primary:hover {
+background-color: #23527c;
+}
+
+.footer-bottom {
+border-top: 1px solid #444;
+padding-top: 20px;
+text-align: center;
+font-size: 14px;
+margin-top: 30px;
+}
+
+.footer-bottom p {
+margin: 0;
+}
+
+.footer-bottom a {
+color: #fff;
+text-decoration: none;
+}
+
+.footer-bottom a:hover {
+color: #aaa;
+}
+
+</style>
+
+  </head>
+  <body>
+    
+
+<nav class="navbar">
+  <div class="navbar-left">
+    <a href="#"><img class="logo" src="image/logodev-removebg-preview.png" alt="Logo"></a>
   </div>
+  <div class="navbar-middle">
+    <form class="search-form" action="#">
+      <input type="text" placeholder="Search...">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
+<div class="myproject">
+	
+My Project
+
 </div>
 
-<footer class="container-fluid " style="background-color:#4487f2;">
-  <p>Footer Text</p>
+
+  <div class="navbar-right" style="color: rgb(251, 253, 255);">
+    <a href="#"><i class="fa fa-user"></i></a>
+  </div>
+
+
+  <div class="navbar-menu">
+
+    <a href="#"><i class="fa fa-bars"></i></a>
+  </div>
+
+
+</nav>
+
+</nav>
+<br>
+
+<br>
+
+<div class="container">
+ <div class="row">
+    <div class="col-md-3" style="font-size:30px;font-weight: bold;color:#007bff;">
+ Our  Services!
+<hr style="height:10px;border-width:0;color:#5A4BDA;background-color:#007bff">
+ 
+    
+
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-md-8 col-sm-12">
+    	<div class="row">
+<div class="col-md-6 col-sm-0">
+<a href="#" class="box">
+      <img src="image/world-wide-web.png" alt="Profile Picture">
+      <span>Web Development</span>
+    </a>
+
+
+
+    </div>
+    <div class="col-md-6 col-xs-8">
+    	
+
+<a href="#" class="box">
+      <img src="image/app-development.png" alt="Profile Picture">
+      <span>App Development</span>
+    </a>
+
+</div>
+<br>
+<br><br><br><br>
+ <div class="col-md-6">
+    	
+
+<a href="#" class="box">
+      <img src="image/ui.png" alt="Profile Picture">
+      <span>UI/UX Design</span>
+    </a>
+
+</div>
+
+ <div class="col-md-6">
+    	
+
+<a href="#" class="box">
+      <img src="image/graphic-design.png" alt="Profile Picture">
+      <span>Graphic Design</span>
+    </a>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<br>
+
+
+
+
+
+<section class="ui-showcase">
+  <div class="ui-container">
+    <h2>UI Showcase</h2>
+    <div class="ui-grid">
+      <div class="ui-item">
+        <img src="https://img.freepik.com/free-vector/gradient-ui-ux-elements-collection_79603-1923.jpg" alt="UI design 1">
+        <h3>UI Design 1</h3>
+      </div>
+      <div class="ui-item">
+        <img src="https://cdn.dribbble.com/users/2399102/screenshots/14160177/media/0c5cd86ffdf77f042473551b20689113.png?compress=1&resize=400x300" alt="UI design 2">
+        <h3>UI Design 2</h3>
+      </div>
+      <div class="ui-item">
+        <img src="https://img.freepik.com/free-vector/gradient-colored-ui-kit-collection_52683-78379.jpg" alt="UI design 3">
+        <h3>UI Design 3</h3>
+      </div>
+      <div class="ui-item">
+        <img src="ui-4.png" alt="UI design 4">
+        <h3>UI Design 4</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<div class="contact-us">
+  <a href="#">Contact Us</a>
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-section about">
+      <h2 class="logo">DevOnes</h2>
+      <p></p>
+      <div class="contact">
+        <span><i class="fas fa-phone"></i> 629-677-1414</span>
+        <span><i class="fas fa-envelope"></i> info@devones.com</span>
+      </div>
+      <div class="socials">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+    <div class="footer-section links">
+      <h2>Quick Links</h2>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-section contact-form">
+      <h2>Contact Us</h2>
+      <form action="#">
+        <input type="email" name="email" class="text-input contact-input" placeholder="Your email address">
+        <textarea name="message" class="text-input contact-input" placeholder="Your message"></textarea>
+        <button type="submit" class="btn btn-primary">Send</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2023 DevOnes. All Rights Reserved.</p>
+  </div>
 </footer>
 
-</body>
+
+
+
+
+<!-- Add these script tags to your HTML file to include Bootstrap and Font Awesome -->
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+  integrity="sha384-0hQnkA3dtJpbwuXy7D0nRN14uI43q3cWDXuZ7cxKroRnRprPpYzPyB85VxJ+ybs6"
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+  integrity="sha384-ItTJw/YMfW8jblTJdMZbxTBnSvS+LW1XhAV+DdCscJ+ahZ4COYcgs2Q1YgxFGe4r"
+  crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
 </html>
